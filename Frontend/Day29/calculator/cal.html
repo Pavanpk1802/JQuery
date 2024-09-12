@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>This is Calculator App</h1>
+    <label>Number 1:</label>
+    <input class="emp" id="num1" type="number" placeholder="enter integer Number" ><br><br>
+    <label>Number 2:</label>
+    <input class="emp" id="num2" type="number" placeholder="enter integer Number" ><br><br>
+    <select class="emp" id="operatorId" >
+        <option value="">--select--</option>
+        <option value="+" >+</option>
+        <option value="-" >-</option>
+        <option value="*" >*</option>
+        <option value="/" >/</option>
+    </select><br><br>
+    <button id="button" >Result</button>
+    <h4 id="resultId" >0</h4>
+    <script type="text/javascript" >
+       $(document).ready(function(){
+        $('#button').on('click',function(){
+            
+            var num1 = parseInt($('#num1').val());
+            var num2 = parseInt($('#num2').val());
+            // var operator = $('#operatorId option:selected').val();
+            var operator = $('#operatorId').val();
+            // var variableValue =  $("selector  option: selected").text(); 
+            // alert(operator)     
+            var result;
+            if(operator=='+'){
+                result = num1 + num2
+            }else if(operator=='-'){
+                if(num1<num2){
+                    result=num2-num1
+                    alert(result);
+                }else{
+                    result = num1 - num2
+                }                
+            }else if(operator=='*'){
+                result = num1 * num2
+            }else if(operator=='/'){
+                if(num1<num2){
+                    result=num2/num1
+                    alert(result);
+                }else{
+                    result = num1 / num2;
+                } 
+            }else{
+                alert('please enter the values first')
+            }
+            $('#resultId').text(result)
+
+        })
+            $('.emp').on('change',function(){
+                $('#resultId').text('');
+            })
+       })
+    </script>
+</body>
+</html>

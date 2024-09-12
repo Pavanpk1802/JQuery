@@ -1,0 +1,134 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.form-group-1{
+    border: 2px solid #005f69;
+    border-radius: 10px;
+    width:80%;
+    margin: 0 auto;
+
+}
+.form-section-1{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.label-1{
+    display:inline-block;
+    width: 120px !important;
+    font-size: 18px;
+
+}
+.input-1{
+    border-radius: 5px;
+    /* border: none; */
+    background-color: #A3C1AD;
+    color: white;
+    /* outline: none; */
+    padding:5px;
+}
+.input-1:hover{
+    background-color: #F0F8FF;
+    color:#041E42;
+    /* border: none; */
+    padding: 5px;
+
+}
+.form-group-2{
+    border: 2px solid #005f69;
+    border-radius: 10px;
+    width:80%;
+    margin: 0 auto;
+}
+.form-section-2{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.form-div-2{
+    /* background-color: green; */
+    margin: 10px;
+    display:flex;
+    justify-content: space-around;
+}
+.label-2{
+    display: inline-block;
+    width:150px !important;
+    text-align: left;
+}
+.input-2{
+    border-radius: 5px;
+    /* border: none; */
+    background-color: #A3C1AD;
+    color: white;
+    margin-right: 10px;
+    padding:5px;
+}
+.input-2:hover{
+    background-color: #F0F8FF;
+    color:#041E42;
+    /* border: none; */
+    padding: 5px;
+
+}
+.form-section-3{
+    border: 2px solid #005f69;
+    border-radius: 10px;
+    width:80%;
+    margin: 0 auto;
+}
+.form-div-3{
+    display:inline-block;
+    text-align: left;
+    margin: 10px;
+}
+#noticeId{
+    font-size:15px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color:#A3C1AD;
+}
+#noticeId:hover{
+    background-color: #F0F8FF;
+
+}
+#paymentId{
+    /* background-color: green; */
+    display: inline-block;
+    width: 150px;
+}
+.paymentType{
+    margin: 10px;
+}
+.paymentRadio{
+    margin: 10px;
+}
+.table-div{
+    display:flex;
+    width: 80%;
+    margin: 0 auto;
+}
+table,tr,th,td{
+    border: 2px solid #005f69;
+    border-collapse: collapse;
+}
+#table-main{
+    text-align: center;
+    width: 100%;
+}
+.t-heading{
+    background-color: #367588;
+}
+tbody tr td{
+    padding: 5px;
+    text-align: center;
+}
+#td-rs input {
+text-align: right;
+font-size: 15px;
+background-color:#A3C1AD;
+border-radius: 4px;
+}

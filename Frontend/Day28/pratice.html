@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./pratice.css" >
+</head>
+<div class="container"><br><br>
+    <table>
+        <thead>
+            <button id="addId" class="btnAdd" >Add</button>
+            <button id="submitId" class="btnAdd" >Submit</button>
+            <tr class="trCls" >
+                <th>EmpId</th>
+                <th>EmpName</th>
+                <th>EmpDept</th>
+                <th>EmpSalary</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+        </tbody>
+    </table>
+</div>
+<label>Name</label>
+<input id="checkId" type="checkbox" >
+<input id="nameId" type="text" placeholder="enter Name" disabled>
+
+<body>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            
+            var id = '<input class="inputCls" type="text" >';
+            var Name = '<input class="inputCls" type="text" >';
+            var Dept = '<input class="inputCls" type="text" >';
+            $("#addId").on("click",function(){
+                    var htm = '';
+                    htm += '<tr>';
+                    htm += '<td><input type="number" name="empId" placeholder = "enter Sl.no" ></td>';
+                    htm += '<td><input type="text" name="empName" placeholder = "EmpName" ></td>';
+                    htm += '<td><input type="text" name="empDep" placeholder = "empDepartment" ></td>';
+                    htm += '<td><input type="text" name="empSal" placeholder = "empSalary" ></td>';
+                    htm += '</tr>';
+                    
+                
+                $("table tbody").append(htm);
+            })
+            $("#submitId").on("click",function(){
+                console($())
+            })
+        })
+    </script>
+</body>
+</html>

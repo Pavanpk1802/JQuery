@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #headingId{
+            background-color: rgb(198, 222, 226);
+            width: 150px;
+            padding: 10px;
+            border-radius: 5px;
+            color:blue;
+            font-size: 18px;
+        }
+        span{
+            color:red;
+        }
+        button{
+            font-size: 15px;
+            padding: 5px;
+            width: 80px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h5 id="headingId" >I clicked <span id="spanId" >0</span> Times</h5> 
+    <button id="incrementId" >Increment</button>
+    <button id="resetId" >Reset</button>
+    <button id="decrementId" >Decrement</button>
+    <script type="text/javascript" >
+        var count = 0;
+        $(document).ready(function(){
+            $('#incrementId').on('click',function(){
+                // $('#spanId').text(count=count+1);
+                // console.log(int++);
+                if(count<15){
+                    // $('#spanId').text(count=count+5);
+                    $('#spanId').text(count += 1);
+                    
+                }
+        });
+            $('#resetId').on("click",function(){
+                $('#spanId').text(0);
+                count = 0;
+                
+            })
+            $('#decrementId').on('click',function(){
+                // $('#spanId').text(count=count-5);
+                if(count>-10){
+                    // $('#spanId').text(count=count-5);
+                    $('#spanId').text(count -= 1);
+                }
+            })
+        });
+
+    </script>
+</body>
+</html>

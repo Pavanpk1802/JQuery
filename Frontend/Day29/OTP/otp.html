@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate OTP</title>
+    <link rel="stylesheet" href="./otp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+ <div class="container">
+    <button type="button" id="generateOtp" >Generate OTP</button><br><br>
+    <label class="validateCls" >OTP:</label>
+    <input class="inputCls" id="otpId" type="number" ><br><br> 
+    <label class="validateCls" >Enter OTP:</label>
+    <input id="enterOtp" class="inputCls" type="number"><br><br> 
+    <button id="validateBtn" class="validateCls" >Validate OTP:</button>
+    <h2 id="otpValue" ></h2>
+ </div>
+ <script>
+    $(document).ready(function(){
+        var ran = "";
+        $('#generateOtp').on('click',function(){
+            // alert('random number')
+            ran = parseInt(Math.floor(Math.random(999)*(1111111)));
+            console.log(ran)
+            $('#otpId').val(ran);
+            $('#otpValue').text("");
+            $('#enterOtp').val("")
+
+        })
+        $('#validateBtn').on('click',function(){
+            // alert('heyehyey')
+            if(ran==$('#enterOtp').val()){
+                $('#otpValue').text('successfully validated').css('color','green');
+                // alert('successfully validated')
+            }else{
+                $('#otpValue').text('Please enter a valid OTP').css('color','red');
+                // alert('please enter a valid OTP')
+            }
+        })
+        $('.inputCls').on('change',function(){
+                $('#otpValue').text("");
+            
+        })
+        
+    })
+ </script>
+</body>
+</html>

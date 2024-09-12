@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label>Number 1:</label>
+            <input id="numId" type="number" />
+        </div>
+            <input id="averageId" type="button" value="Average" />
+            <h2></h2>
+    </div>
+    <div>
+        <div>
+            <label>Number 2:</label>
+            <input id="num2Id" type="number" />
+        </div>
+        <div>
+            <label>Number 3:</label>
+            <input id="num3Id" type="number" />
+        </div>
+            <input id="clickId" type="button" value="click" />
+            <h1></h1>
+    </div>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $(document).on("click","#averageId",function(){
+                var numVal = $("#numId").val();
+                var sum=0;
+                for(var i=1;i<=numVal;i++){
+                //    console.log(sum +=i);
+                   $('h2').text(sum +=i/numVal);
+                }
+                // $('h2').text(sum/numVal);
+            });
+            $(document).on("click","#clickId",function(){
+            //    alert("heyheyheyheyheyheyheyheyhey");
+               var num2 = parseInt($("#num2Id").val());
+               var num3 = parseInt($("#num3Id").val());
+               var sum2 = 0;
+               var count = 0;
+               for(var i=num2; i <= num3; i++){
+                   sum2 = sum2 + parseInt(i);
+                   count = count + 1;
+                } 
+                var result = sum2/parseInt(count);
+               $('h1').text(result);
+            });
+        });
+    </script>
+</body>
+</html>

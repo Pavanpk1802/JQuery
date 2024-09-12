@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div>
+            <lable>Age:</lable>
+            <input id="ageId" type="number"  />
+        </div>
+        <div>
+            <lable>Guardian:</lable>
+            <select id="guardianId" >
+                <option value="-1" >--select--</option>
+                <option value="1" >Yes</option>
+                <option value="2">No</option>
+            </select>
+        </div>
+            <input id="checkId" type="button" value="check" />
+            <h2></h2>
+    </div>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $("#checkId").on("click",function(){
+                var ageVal = $("#ageId").val();
+                var guardianVal = $("#guardianId option:selected").val();
+                if((ageVal>12 && ageVal<60) && guardianVal==1){
+                    $('h2').text("more than yes "+ageVal);
+                }else if(ageVal>12 && ageVal<60 && guardianVal==2){
+                    $('h2').text("more than no "+ageVal);
+                }else if((ageVal<=11 && ageVal>=60) || guardianVal==1){
+                    $('h2').text("yes the guardian");
+                }else if((ageVal<=11 && ageVal>=60) || guardianVal==2){
+                    $('h2').text("you need guardian");
+                }else{
+                    $('h2').text("please select the guardian");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

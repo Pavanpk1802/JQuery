@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body{
+            margin: 10px;
+        }
+        .container{
+            background-color: antiquewhite;
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+        .labelCls{
+            margin: 10px;
+            padding: 5px;
+        }
+        .inputCls{
+            margin: 10px;
+            padding: 5px;
+        }
+        .btn{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label class="labelCls" id="labelId" >Number 1:</label>
+            <input class="inputCls" id="inputId" type="number"  />
+        </div>
+            <input id="addId" class="btn btn-secondary" type="button" value="add" />
+            <input id="showId" class="btn btn-secondary" type="button" value="Show" />
+            <h2 id="h2Id" ></h2>
+    </div>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            
+            var arr = [];
+            console.log(arr);
+            $(document).on("click","#addId",function(){
+                var numVal = $("#inputId").val();
+                arr.push(numVal);
+                console.log(arr);
+            });
+            $(document).on("click","#showId",function(){
+                $("#h2Id").text(arr);
+            });
+            
+        });
+    </script>
+</body>
+</html>

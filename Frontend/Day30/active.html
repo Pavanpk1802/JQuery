@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./active.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* #activeSection{
+            display: none;
+        }
+        .legalCls{
+            display: inline-block;
+            width: 110px;
+        }
+        table,tr,th,td{
+            border: 1px solid black;
+            border-collapse:collapse;
+        }
+        table{
+            width: 20%;
+            margin-left:65px;
+            display: none;
+        }
+        #trHead{
+            background-color: #BEC7E1;
+
+        }
+        th{
+            width: 100px;
+        }
+        .thCls{
+            width: 90px;
+            border: none;
+            outline: none;
+
+        }
+        .addId{
+            color: black;
+            position: relative;
+            left: 326px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            background: #E4E8F3;
+            cursor: pointer;
+            display: none;
+        }
+        .Mbtn{
+            color: black;
+            position: relative;
+            left: 326px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            background: #E4E8F3;
+            cursor: pointer;
+            display: none;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="activeDiv" >
+            <input id="activeRadio" type="radio" name="button" > <label class="activeLabel" >Active</label>
+            <input id="closeId" type="radio" name="button" ><label class="closeLabel" >Close</label>
+        </div><br>
+            <div id="activeSection" >
+                <label class="legalCls" >FirstName:</label>
+                <input class="inputFields" type="text" placeholder="Enter First Name" required ><br><br>
+                <label class="legalCls" >LegalName:</label>
+                <input class="inputFields" type="text" placeholder="Enter Legal Name" required ><br><br>
+                <label class="legalCls" >Address:</label>
+                <input class="inputFields" type="text" placeholder="Enter Address" required >
+                <h4>Business Type:</h4>
+                <div id="WholeSale" >
+                    <label><input id="WcompanyId" class="radioCls" type="radio" name="companyType" >WholeSale</label>
+                    <div>
+                        <table id="tableId" >
+                            <thead id="theadId">
+                                <tr id="trHead">
+                                    <th>S.no</th>
+                                    <th>Product</th>
+                                    <th>value</th>
+                                </tr>
+                            </thead>
+                            <tbody id="WbodyId" >
+
+                            </tbody>
+                        </table>
+                        <button class="addId" >Add</button>
+                    </div>
+                </div>
+                <div id="manufacture" >
+                    <label><input id="McompanyId" class="radioCls" type="radio" name="companyType" >Manufacturing</label>
+                    <div>
+                        <table id="MtableId" >
+                            <thead id="MtheadId">
+                                <tr id="trHead">
+                                    <th>S.no</th>
+                                    <th>Product</th>
+                                    <th>value</th>
+                                </tr>
+                            </thead>
+                            <tbody id="MbodyId" >
+            
+                            </tbody >
+                        </table>
+                        <button class="Mbtn" >Add</button>
+                        
+                    </div>
+                </div><br>
+    </div>
+    <div id="closeSection">
+        <label class="labelCls">Name:</label>
+        <input class="inputFields" type="text" placeholder="Enter Name"><br><br>
+        <label class="labelCls" >Legal Name:</label>
+        <input class="inputFields" type="text" placeholder="Enter Legal Name" ><br><br>
+        <label class="labelCls" >Tin:</label>
+        <input class="inputFields" type="number" placeholder="Enter Tin Number" ><br><br>
+        <label class="labelCls">Business Type:</label>
+        <select id="selectId">
+            <option value="-1" >--Select--</option>
+            <option>WholeSale</option>
+            <option>Manufacturing</option>
+        </select>
+        <h4>Reason for closing the business:</h4>
+        <input type="checkbox" class="checkboxCls" name="reasonCheck" ><span>Insufficient funds/Cash flow problems</span><br>
+        <input type="checkbox" class="checkboxCls" name="reasonCheck" ><span>A business might close due to legal</span><br>
+        <input id="othersId" class="checkboxCls" type="checkbox" name="reasonCheck" ><span>Others</span><br>
+        <textarea placeholder="Please text here" ></textarea>
+    </div>
+
+    </div><br>
+
+    
+        
+        <script type="text/javascript" >
+        $(document).ready(function(){
+            var count=0;
+            var Mcount=0;
+            $('#activeRadio').on('click',function(){
+                // alert('this is clicked')
+                $('#activeSection').css('display','block');
+                $('#closeSection').css('display','none');
+                $("#selectId").val("-1");
+                $('.inputFields').val('');
+                $('textarea').hide();
+                $('.checkboxCls').prop('checked',false)
+            })
+
+            $('#closeId').on('click',function(){
+                $('#activeSection').css('display','none');
+                $("#closeSection").css('display','block');
+                $('.inputFields').val("");
+                $('textarea').hide();
+                $('.radioCls').prop('checked',false);
+                $("table,.addId,.Mbtn ").css('display','none');
+                if($('#closeId').prop('checked')){
+                    $('#tableId tbody tr').remove();
+                    $('#MtableId tbody tr').remove();
+                    count = 0;
+                    Mcount = 0;
+                }
+            })
+            $('.addId').on('click',function(){
+                if(count<3){
+                    var htm= '';
+                    htm +='<tr>';
+                    htm +=' <td><input class="thCls" type="number"></td>';                  
+                    htm +=' <td><input class="thCls" type="text"></td>';
+                    htm +=' <td><input class="thCls" type="text"></td>';
+                    htm +='</tr>';
+                    $("#tableId #WbodyId").append(htm);
+                    count = count+1;
+                }
+            })
+
+            $('#WcompanyId').on('click',function(){
+                if($('#WcompanyId').prop('checked')){
+                    $('#tableId').css('display','block');
+                    $('.addId').css('display','block');
+                    $('#MtableId').css('display','none');
+                    $('.Mbtn').css('display','none');
+                }
+            })
+            $('#McompanyId').on('click',function(){
+                $('#tableId').css('display','none');
+                $('.addId').css('display','none');
+                $('#MtableId').css('display','block');
+                $('.Mbtn').css('display','block');
+            })
+            $('.Mbtn').on('click',function(){
+                if(Mcount<3){
+                    var Mhtm="";
+                    Mhtm +='<tr><td><input class="thCls" type="number"></td><td><input class="thCls" type="text"></td><td><input class="thCls" type="text"></td></tr>';
+                    $("#MtableId #MbodyId").append(Mhtm).css('width','100');
+                    Mcount = Mcount+1;
+                    }
+                })
+            $('#othersId').on('change',function(){
+                if($('#othersId').prop('checked')){
+                    $('textarea').show();
+                }else{
+                    $('textarea').hide();
+                    $('textarea').val("");
+                }
+            })            
+
+          
+        })
+
+    </script>
+</body>
+</html>

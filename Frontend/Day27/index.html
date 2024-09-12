@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Information</h1>
+        <form action="" class="form-main">
+            <div class="form-group">
+                <label for="" class="label-cls">First Name:</label>
+            <input type="text" id="firstName" name="firstName" class="input-cls" placeholder="Enter First Name">
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" class="input-cls" placeholder="Enter last Name" >
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls">Gender:</label>
+            <label><input type="radio" name="gender" value="Male" >Male</label>
+            <label><input type="radio" name="gender" value="Female" >Female</label>
+            <label><input type="radio" name="gender" value="Others" >Others</label>
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls">Date of Birth:</label>
+            <input type="date" name="DOB" id="DOB" class="input-cls" placeholder="Enter DOB">
+            </div><br>  
+            <div class="form-group">
+                <label for="" class="label-cls">Email:</label>
+            <input type="email" name="Eamil" id="email" class="input-cls" placeholder="Enter Email">
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls">Phone:</label>
+            <input type="number" name="Phone" id="phone" class="input-cls" placeholder="Enter Phone Number">
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls">Address:</label>
+            <input type="text" name="Address" id="address" class="input-cls" placeholder="Enter Address">
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls">Education:</label>
+                <input type="checkbox" name="education" class="qualification" value="ssc" id="sscId"><label for="">SSC</label>
+                <input type="checkbox" name="education" class="qualification" value="Inter" id="intId" ><label for="">Inter/Polycet/ITI</label>
+                <input type="checkbox" name="education" class="qualification" value="Degree" id="degId" >Degree/Btech<label for=""></label>
+            </div><br>
+            <div class="form-group">
+                <label for="" class="label-cls" >State:</label>
+                <select name="State" class="input-cls" id="stateId">
+                <option value="" >Select State</option>
+                <option name="State" value="Telangana">Telangana</option>
+                <option name="State" value="Gujarat">Gujarat</option>
+                <option name="State" value="Tamilnadu">Tamilnadu</option>
+                <option name="State" value="Assam">Assam</option>
+                <option name="State" value="Delhi">Delhi</option>
+                    
+                </select>
+            </div><br>
+            <div class="submit">
+                <button class="btn-s" id="submitId" >Submit</button>
+                <button class="btn-s" id="resetId" >Reset</button>
+            </div>
+
+
+        </form>
+    </div>
+    <script type="text/javascript" src="./index.js" ></script>
+</body>
+</html>

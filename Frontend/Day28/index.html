@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h2>This is table</h2>
+    <table style="border: 2px solid black;" >
+        <tbody  >
+
+        </tbody>
+    </table>
+    <button class="add" >click</button>
+    <p>hdbvbfvbf</p>
+    <p>hdbvbfvbf</p>
+    <label>firstName</label>
+    <input id="checkId" type="checkbox" >
+    <input type="text" id="inputId" placeholder="Enter FirstName" disabled>
+    <label>Total</label>
+    <input type="text" id="totalId" placeholder="Total" disabled>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $('#checkId').on("change",function(){
+               if($("#checkId").prop("checked")){
+                   $("#inputId").prop('disabled',false);
+               }else{
+                $("#inputId").prop('disabled',true);
+                $("#inputId").val("");
+                $("#totalId").val("");
+               }    
+            }) // This is just for the accessing the firstName & total inputfields when the checkbox is true or false
+            var res = "";
+            $('#inputId').on('input',function(){
+            res = $(this).val();
+                $("#totalId").val(res); //This says when the firstname inputfield is entered any valuse it will automatically reflect in the toal inputfield
+           })  
+            $('p').click(function(){
+                $(this).hide();
+            }) 
+
+             // this is table 
+             $('.add').on('click',function(){
+                var name ='Hello';
+                var last ='World';
+                var htm = "";
+                htm += '<tr><td>'+name+'</td>  <td>'+last+'</td></tr>'
+                htm += '<h2>this is input '+res+' value</h2>';
+                $('table tbody').append(htm);
+                
+                // var role = $('.divcls').text('dbms');
+             })
+
+
+
+
+
+        })
+       
+       
+       
+    </script>
+</body>
+</html>

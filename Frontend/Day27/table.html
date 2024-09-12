@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="./table.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>This is Table</h1><br><br>
+    <div class="form-group-1">
+        <div class="form-section-1">
+           <div class="section-div-1">
+             <label class="label-1">Tin<span style="color: red;" >*</span></label>
+            <input type="number" class="input-1" ><br><br>
+            <label class="label-1" >TradeName<span style="color: red;" >*</span></label>
+            <input type="text" class="input-1" >
+            </div>  
+            <div class="section-div-1" >
+                <label class="label-1" >LegalName<span style="color: red;" >*</span></label>
+               <input type="text" class="input-1" ><br>
+               <!-- <label>Tin<span style="color: red;" >*</span></label>
+               <input type="text"> -->
+            </div>     
+        </div>
+       
+    </div> <br>
+    <div class="form-group-2">
+        <div class="form-section-2">
+            <div class="form-div-2">
+                <div>
+                    <label class="label-2">Door/Plot Old<span style="color: red;" >*</span></label>
+                    <input type="text" class="input-2" >
+                </div>
+                <div>
+                    <label class="label-2">Door/Plot New<span style="color: red;" >*</span></label>
+                    <input type="number" class="input-2" >
+                </div>    
+                <div>
+                    <label class="label-2" >Building<span style="color: red;" >*</span></label>
+                    <input type="text" class="input-2" >
+                </div>
+            </div>  
+           
+         </div>
+         <div class="form-section-2">
+            <div class="form-div-2">
+                <div>
+                    <label class="label-2">Shop/Office Number<span style="color: red;" >*</span></label>
+                    <input type="number" class="input-2" >
+                </div>
+                <div>
+                    <label class="label-2">Road Street/Lane<span style="color: red;" >*</span></label>
+                    <input type="text" class="input-2" >
+                </div>
+                <label class="label-2" >Village/Town/City<span style="color: red;" >*</span></label>
+                <input type="text" class="input-2" >
+            </div>  
+           
+         </div>
+         <div class="form-section-2">
+            <div class="form-div-2">
+                <label class="label-2">circle<span style="color: red;" >*</span></label>
+                <input type="text" class="input-2" >
+                <label class="label-2">PIN<span style="color: red;" >*</span></label>
+                <input type="number" class="input-2" >
+                <label class="label-2" >District<span style="color: red;" >*</span></label>
+                <input type="text" class="input-2" >
+            </div>  
+           
+         </div>
+         <div class="form-section-2">
+            <div class="form-div-2">
+                <label class="label-2">PAN<span style="color: red;" >*</span></label>
+                <input type="text" class="input-2" >
+                <label class="label-2">Email Id<span style="color: red;" >*</span></label>
+                <input type="email" class="input-2" >
+                <label class="label-2" >Mobile<span style="color: red;" >*</span></label>
+                <input type="number" class="input-2" >
+            </div>  
+           
+         </div>
+        
+    </div><br>
+    <div class="form-section-3">
+        <div class="form-div-3">
+            <label>Payment Type</label><br>
+            <input id="noticeId" placeholder="Against Notices/Without Notice" ><br><br>
+            <label id="paymentId" >Payment Mode<span style="color: red;" >*</span></label>
+            <label class="paymentType" ><input type="radio" class="paymentRadio" name="paymentMode" >Offline/Manual</label>
+            <label class="paymentType" ><input type="radio" class="paymentRadio" name="paymentMode" >NetBanking/Online</label>
+        </div>
+    </div>
+     <br>
+     <div class="table-div">
+        <table id="table-main">
+            <thead>
+                <tr class="t-heading" >
+                    <th>Select</th>
+                    <th>Payment Description</th>
+                    <th>DP Code</th>
+                    <th>Payment Purpose Code</th>
+                    <th>Amount (INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" id="checkId" ></td>
+                    <td>Payment against Notice/Without Notice</td>
+                    <td>004000111AA21409713</td>
+                    <td>00004000211AA21409713</td>
+                    <td id="td-rs" ><input id="textField" disabled ></td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+     <script type="text/javascript" src="./table.js" ></script>
+</body>
+</html>

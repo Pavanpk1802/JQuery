@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        table,thead,tr,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table{
+            width: 50%;
+            margin: 0 auto;
+        }
+        button{
+            position: relative;
+            left: 70.5%;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <li id="1">02</li>
+        <li id="2">03</li>
+        <li id="3">04</li>
+        <li id="4">05</li>
+        <li id="5">06</li>
+        <li id="6">07</li>
+        <li id="7">08</li>
+        <li id="8">09</li>
+        <li id="9">10</li>
+
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>EmpId</th>
+                <th>EmpName</th>
+                <th>EmpRole</th>
+                <th>EmpState</th>
+                <th>checkbox</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button id="submit_1">submit</button>
+    <button id="submit_0" class="subBtn2">submitt</button>
+    <button id="submit_1" class="subBtn2">submitt</button>
+    <button id="submit_2" class="subBtn2">submitt</button>
+    <button id="submit_3" class="subBtn2">submitt</button>
+    <button id="submit_4" class="subBtn2">submitt</button>
+    <button id="submit_5" class="subBtn2">submitt</button>
+    <button id="submit_6" class="subBtn2">submitt</button>
+    <button id="submit_7" class="subBtn2">submitt</button>
+    <button id="submit_8" class="subBtn2">submitt</button>
+    <script>
+        $(document).ready(function(){
+                          
+                    var count=1;
+                    $('#submit_1').on('click',function(){
+                        var htm = '';
+                        htm+= '<tr>'
+                        htm+='<td class="tdCls" id="EmpId_'+count+'" >'+count+'</td>'
+                        htm+='<td class="tdCls" id="EmpName_'+count+'" >'+"pavan"+'</td>'
+                        htm+='<td class="tdCls" id="EmpRole_'+count+'" >'+"frontend"+'</td>'
+                        htm+='<td class="tdCls" id="EmpState_'+count+'" >'+"Telangana"+'</td>'
+                        htm+='<td ><input class="tdClss" id="checkBox_'+count+'"" type="checkbox" ></td>'
+                        htm+= '</tr>'
+                        $('table tbody').append(htm);
+                        count++;
+                        console.log(htm);     
+
+                })
+                // $('#submit_0').on('click',function(){
+                //    var idSplit = $('#submit_2').attr("id").split('_');
+                //     console.log(idSplit);
+                //     // console.log(idSplit[0]);
+                //     // console.log(idSplit[1]);
+                // })
+                $(document).on("click",".subBtn2",function(){
+                    var id = $(this).attr("id").split("_")[1];
+                    console.log(id);
+                })
+            });
+    </script>
+</body>
+</html>

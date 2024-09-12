@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .container{
+            /* background-color: #dbdbdb; */
+            background-color: 	#75a9b3;
+            /* background-color: #c4391d; */
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        h1{
+            background-color: white;
+            width: 36%;
+            margin: 0 auto;
+            border-radius: 3px;
+        }
+        .numberCls{
+            margin: 10px;
+        }
+        .labelCls{
+            display: inline-block;
+            width: 70px !important;
+            font-size: 20px;
+        }
+        .checkCls {
+            width: 50px;
+            margin: 10px;
+            border-radius: 3px;
+            font-size: 15px;
+            padding: 2px;            
+        }
+        .inputCls{
+            font-size: 15px;
+            border: none;
+            outline: none;
+            border-radius: 2px;
+            margin-left: 10px;
+        }
+        #resultId{
+            color: black;
+            background-color: 	#eeeee0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Practice Programs</h1>
+           <div class="numberCls" >
+            <label class="labelCls" >Number:</label>
+            <input class="inputCls" type="number" id="numId" placeholder="Enter Any Number" />
+           </div>
+            <button class="checkCls" disabled>check</button>
+            <input class="inputCls" id="resultId" placeholder="Result" disabled/>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.inputCls').on('input',function(){
+                if($('.inputCls').val() !==""){
+                    $('.checkCls').prop('disabled',false);
+                }else{
+                    $('.checkCls').prop('disabled',true);
+                }
+            })
+            $('button').on('click',function(){
+                var numberVal = $('#numId').val();
+                if(numberVal<70){
+                    $('#resultId').val(numberVal+' number is less than 70');
+                }else if(numberVal==70){
+                    $('#resultId').val(numberVal+' and 70 both are equal');
+                }else{
+                    $('#resultId').val(numberVal+' number is more than 70');
+                }
+            })
+            
+        })
+    </script>
+</body>
+</html>

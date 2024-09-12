@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+table,tr,th,td{
+    border: 2px solid black;
+    /* border-radius: 10px; */
+    border-collapse:collapse;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color:navajowhite ;
+
+}
+table{
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+}
+.btnAdd{
+    margin: 2px;
+    position: relative;
+    left: 68%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    background: rgb(95 220 95);
+}
+.trCls{
+    text-align:center;
+    background-color: skyblue;
+}
+.inputCls{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    align-items: center;
+}

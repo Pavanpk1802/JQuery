@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube of a Number</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            margin: 10px;
+        }
+        .container{
+            background-color: aqua;
+            border-radius: 5px;
+            text-align: center;
+            width: 30%;
+            margin: 0 auto;
+        }
+        .inputCls{
+            margin: 10px;
+            /* padding: 5px; */
+
+        }
+        .labelCls{
+            width: 125px !important;
+
+        }
+        .btnClass{
+            color: black;
+            background-color:white;
+            outline: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #h2Id{
+            color: #13274F;
+            /* margin: 10px; */
+            padding: 5px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label class="labelCls" >Number:</label>
+            <input class="inputCls" id="numberId" type="number" />
+        </div>
+        <div>
+            <label class="labelCls" >Cube Number:</label>
+            <input class="inputCls" id="cubeId" type="number" />
+        </div>
+            <input id="btnId" class="btnClass btn btn-primary" type="button" value="check">
+            <h2 id="h2Id" class="h2Cls" ></h2>
+    </div>    
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $("#btnId").on("click",function(){
+                var numVal = parseInt($("#numberId").val());
+                var cubeVal =parseInt($("#cubeId").val());
+                var result = numVal ** cubeVal;
+                $('#h2Id').text(result);
+            });
+        });
+    </script>
+</body>
+</html>

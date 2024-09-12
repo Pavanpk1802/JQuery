@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table,tr,th,td{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+     <input type="number" id="num1" placeholder="enter number 1" >
+    <input type="number" id="num2" placeholder="enter number 2" >
+    <input id="operatorId" type="text" placeholder="operator" >
+    <button id="calculate">Calculate</button>
+    <div>
+        <label for="result">Result:</label>
+        <span id="result">0</span>
+    </div>
+
+
+     <table>
+        <thead>
+            <tr>
+                <th>Sl.no</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+     </table>
+     <button id="addId" >add</button>
+     <button id="deleteId" >Delete</button>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            
+            $('#calculate').on('click',function(){
+                // alert($('#num1').val());
+                // alert($('#num2').val());
+                var num1 = parseInt($('#num1').val());
+                var num2 = parseInt($('#num2').val());
+                var operator = $('#operatorId').val();
+                var result = 0;
+                if(operator=='+'){
+                    result = num1 + num2
+                }else if(operator == '-'){
+                    result = num1 - num2
+                }else if(operator == '*'){
+                    result = num1 * num2
+                }else if(operator == '/'){
+                    result = num1 / num2
+                }
+                $('#result').text(result);
+            })
+            $('#addId').on('click',function(){
+                // alert('heyeye')
+                var htm =" ";
+                    htm += '<tr class="trCls" id="trId">';
+                    htm +='<td><input type="text" >'+ ''+'</td>';
+                    htm +='<td><input type="text" >'+ ''+'</td>';
+                    htm +='<td><input type="text" >'+ ''+'</td>';
+                    htm +='<td><input type="text" >'+ ''+'</td>';
+                    htm +='</tr>';
+                   $('table tbody').append(htm);
+                  
+            })
+            $('#deleteId').on('click',function(){
+              
+            })
+            
+
+        })
+
+
+    </script>
+</body>
+</html>

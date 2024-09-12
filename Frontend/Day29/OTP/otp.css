@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: rgb(155, 231, 231);
+    width: 25%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 220px;
+    /* left: 350px; */
+
+
+}
+.validateCls{
+    /* background-color: blue; */
+    display:inline-block;
+    width: 105px !important ;
+}
+#generateOtp{
+    padding: 5px;
+    border-radius: 5px;
+}
